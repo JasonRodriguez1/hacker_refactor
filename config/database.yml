@@ -1,0 +1,12 @@
+
+development:
+  adapter: postgresql
+  database: hacker_refactor_development
+
+test:
+  adapter: postgresql
+  database: hacker_refactor_test
+
+production:
+  adapter: postgresql
+  database: hacker_refactor_production
