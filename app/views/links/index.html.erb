@@ -1,0 +1,23 @@
+<h1>Hacker Refactor</h1>
+<% if current_user %>
+
+<button class="btn btn-default btn-xs" style="float:right"><%= link_to "New Link", new_link_path %></button><br><br>
+<% end %>
+
+<div class="container" id="content">
+<table >
+  <thead> 
+    <tr>
+    </tr>
+  </thead>
+  <tbody class="stories">
+    <% @links.each do |link| %>
+      <%= link_to link.description, link.url %>
+      <small><%="(#{link.url})" %></small>
+     
+      <button class="btn btn-default btn-xs">
+        <%= link_to "Delete", link, :method => :delete, :data => { :confirm => "are you sure about this?" } %>
+      </button>
+    <% end %>
+  </tbody>
+</div>

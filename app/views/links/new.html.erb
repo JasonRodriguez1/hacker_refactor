@@ -1,0 +1,19 @@
+<div class="container" id="content">
+
+<% if @link.errors.any? %>
+  <h3>Please correct these problems:</h3>
+    <ul>
+      <% @link.errors.full_messages.each do |messages| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+<% end %>
+
+<%= form_for @link do |f| %>
+  <%= f.label :description %></br>
+  <%= f.text_field :description %></br>
+  <%= f.label :url %></br>
+  <%= f.text_field :url %></br></br>
+  <%= f.submit %>
+  <% end %>
+</div>
